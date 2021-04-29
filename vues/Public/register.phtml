@@ -1,0 +1,53 @@
+<div class="wrapper ">
+
+<div class="mainhome-panel" id="main-panel">
+
+  
+  <div class="panel-header panel-header-sm">
+  </div>
+  
+  <div class="content">
+       <div class="col-md-3">
+      </div>
+          <div class="col-md-6">
+          <div class="card">
+          <div class="card-header">
+                    <h5 class="title">Enregistrement</h5>
+          </div>
+          <div class="card-body">
+                    <form action="<?="register/register";?>" method="post">
+                              <div class="form-group">
+                                        <label for="nom-input">Nom et Prénom(s) <span class="text-danger">*</span></label>
+                                        <input type="text" id="nom-input" class="form-control" name="nom" />
+                              </div>                     
+                              <div class="form-group">
+                                        <label for="email-input">Email <span class="text-danger">*</span></label>
+                                        <input type="text" id="email-input" class="form-control" name="user_email" />
+                              </div>
+                              <div class="form-group">
+                                        <label for="password-input">Password <span class="text-danger">*</span></label>
+                                        <input type="password" id="password-input" class="form-control" name="password" />
+                              </div>
+                              <div class="form-group">
+                                        <label for="password-repeat-input">Password (Repeter) <span class="text-danger">*</span></label>
+                                        <input type="password" id="password-repeat-input" class="form-control" name="password_repeat" />
+                              </div>
+                              <input type="hidden" name="csrf_token" value="<?=Token::generate(); ?>" />
+                      
+                              <div class="row">
+                                        <div class="col-md-12">
+                                                  <button type="submit" class="btn btn-primary btn-round">
+                                                  Se connecter
+                                                  </button>
+                                        </div>
+                              </div>
+                    </form>
+          </div>
+          </div>
+          </div>
+      <div class="col-md-3">
+      </div>
+  </div>
+
+</div>
+</div>
