@@ -2,12 +2,14 @@
 
 class Person
 {
+    private $id; // string
     private $name; // string
     private $sex; //ville
     private $addresses; //codePostal
 
-    function __construct($name = '', $sex = '', $addresses = [])
+    function __construct($id, $name = '', $sex = '', $addresses = [])
     {
+        $this->id = $id;
         $this->name = $name;
         $this->sex = $sex;
         $this->addresses = $addresses;
@@ -26,6 +28,11 @@ class Person
     public function setAddresses($addresses)
     {
         $this->addresses = $addresses;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getName()

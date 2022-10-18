@@ -7,20 +7,20 @@ function call($controller, $action)
     case 'pages':
       $controller = new PagesController();
       break;
-    case 'person':
-      // we need the model to query the database later in the controller
-      require_once('models/ListPerson.php');
-      $controller = new PersonsController();
+    case 'personnes':
+      require_once('models/DAOPersonnes.php');
+      require_once('models/Personne.php');
+      $controller = new PersonnesController();
       break;
   }
 
   $controller->{$action}();
 }
 
-// we're adding an entry for the new controller and its actions
+// j'ajoute ceci pour référencer chaque controlleur et ses actions
 $controllers = array(
   'pages' => ['home', 'error'],
-  'persons' => ['index', 'show']
+  'personnes' => ['index', 'show', 'create']
 );
 
 if (array_key_exists($controller, $controllers)) {
